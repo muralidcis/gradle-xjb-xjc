@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="unqualified">
+
+  <xs:element name="formsavail" type="FormsAvailability" />
+
+  <xs:complexType name="FormsAvailability">
+    <xs:sequence>
+     <xs:element name="platform" type="AvailabilityPlatform" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="timestamp" use="required" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="AvailabilityPlatform">
+    <xs:sequence>
+      <xs:element name="product" type="AvailabilityProduct" maxOccurs="unbounded" />
+    </xs:sequence>
+    <xs:attribute name="type" use="required" type="xs:string" />
+  </xs:complexType>
+
+  <xs:complexType name="AvailabilityProduct">
+    <xs:sequence>
+      <xs:element name="formset" maxOccurs="unbounded" type="AvailabilityFormset" />
+    </xs:sequence>
+    <xs:attribute name="type" use="required" type="xs:string" />
+  </xs:complexType>
+
+    <xs:complexType name="AvailabilityFormset">
+      <xs:sequence>
+        <xs:element name="form" type="AvailabilityForm" maxOccurs="unbounded" />
+      </xs:sequence>
+      <xs:attribute name="formsetid" use="required" type="xs:string" />
+      <xs:attribute name="prod" use="required" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="AvailabilityForm">
+        <xs:attribute name="formid" use="required" type="xs:string" />
+        <xs:attribute name="id" use="required" type="xs:integer" />
+    </xs:complexType>
+  
+</xs:schema>
