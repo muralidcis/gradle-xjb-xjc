@@ -41,7 +41,7 @@ dependencies {
 jaxb {
     xjc {
 	xsdDir = "schema/"
-	generatePackage = "com.formsdirectinc.schema.application.model"
+	generatePackage = "com.gradletoxsd.example"
     }
 }
 
