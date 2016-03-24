@@ -1,0 +1,2 @@
+// Change default build file name for this project
+rootProject.buildFileName = 'gradle-xjb-convert-build'
